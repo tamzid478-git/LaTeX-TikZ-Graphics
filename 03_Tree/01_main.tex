@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+\coordinate (S) at (0,0);
+
+\node at (3,6) {\Large\underline{\textbf{Colour}}};
+\node at (7,6) {\Large\underline{\textbf{State}}};
+
+\node (W)  at (3,2)  {White};
+\node (B)  at (3,-2) {Black};
+
+\node (WC) at (7,4)  {Clean};
+\node (WD) at (7,0)  {Dirty};
+\node (BC) at (7,-1) {Clean};
+\node (BD) at (7,-5) {Dirty};
+
+\draw (S)--(W)  node[midway,above left] {$20/50$};
+\draw (S)--(B)  node[midway,below left] {$30/50$};
+
+\draw (W)--(WC) node[midway,above left] {$10/50$};
+\draw (W)--(WD) node[midway,below left] {$10/50$};
+
+\draw (B)--(BC) node[midway,above left] {$20/50$};
+\draw (B)--(BD) node[midway,below left] {$10/50$};
+
+\end{tikzpicture}
+
+\end{document}
