@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{amsmath} য
+
+\begin{document}
+
+\begin{tikzpicture}[thick, scale=1.2]
+
+   
+    \draw (-3.2, -2.8) rectangle (3.2, 2.6);
+    \node at (-3.4, 2.0) {$\xi$};
+    \begin{scope}
+        \clip (-0.9, 0.5) circle (1.5);
+        \fill[black] (0.9, 0.5) circle (1.5);
+    \end{scope}
+
+    \draw (-0.9, 0.5) circle (1.5); 
+    \draw (0.9, 0.5) circle (1.5);  
+    \draw (0, -0.8) circle (1.5);   
+
+    \node at (-1.8, 2.2) {\textbf{badminton}};
+    \node at (1.8, 2.2) {\textbf{Football}};
+    \node at (0, -2.5) {\textbf{Cricket}};
+
+\end{tikzpicture}
+
+\end{document}
