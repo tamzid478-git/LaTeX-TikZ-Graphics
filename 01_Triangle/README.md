@@ -2,17 +2,27 @@
 
 A geometric triangle construction demonstration using the **tkz-euclide** package in LaTeX.
 
-### 📋 Overview
-This project visualizes a triangle with specific dimensions and internal angles. It utilizes a grid system for precise coordinate placement and geometric labeling.
+### 💡 LaTeX Code:
 
-### 🛠 Key Concepts Used
-* **Coordinate System:** Precise vertex placement using `(x, y)` coordinates.
-* **Geometric Labeling:** Used `tkzLabelSegment` to annotate side lengths (8cm and x cm).
-* **Angle Marking:** Used `tkzMarkAngle` and `tkzLabelAngle` to highlight and label internal angles ($60^{\circ}$, $40^{\circ}$, and $80^{\circ}$).
-* **Styling:** Applied custom line thickness and color (very thick, red) to the triangle structure.
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tkz-euclide}   
 
-### 🖼 Visualization
-*(You can see the final output PDF or rendered image in this folder.)*
-
----
-*Created as part of my LaTeX/TikZ learning journey.*
+\begin{document}
+\begin{tikzpicture}
+\draw [lightgray] (0,0) grid (10,10);     
+\coordinate [label=left:$p$] (p) at (3,1);   
+\coordinate [label=right:$r$] (r) at (8,1);
+\coordinate [label=above:$q$] (q) at (5.5,6);
+\draw [very thick,red] (p) -- (q) -- (r) -- cycle;
+\tkzLabelSegment [below](p,r) {$8cm$};
+\tkzLabelSegment [above right=2pt](q,r) {$x$ cm};
+\tkzMarkAngle [size=1.4cm](r,p,q);
+\tkzLabelAngle (r,p,q) {$60^{\circ}$};
+\tkzMarkAngle[size=2cm](p,q,r);
+\tkzLabelAngle[pos=1.25](p,q,r){$40^{\circ}$};
+\tkzMarkAngle [size=2cm](q,r,p);
+\tkzLabelAngle (q,r,p) {$80^{\circ}$};
+\end{tikzpicture}
+\end{document}
