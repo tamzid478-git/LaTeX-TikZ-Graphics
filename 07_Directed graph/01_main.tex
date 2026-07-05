@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+
+\begin{tikzpicture}[
+>=Stealth,
+vertex/.style={circle,draw=red!70!black,fill=orange!15,thick,minimum size=8mm}
+]
+
+\foreach \v/\x/\y in {
+m/0/3,n/3/3,o/6/3,p/9/3,
+q/1.5/2,r/4.5/2,s/7.5/2,
+t/0/1,u/3/1,v/6/1,w/9/1,
+x/1.5/0,y/4.5/0,z/7.5/0
+}
+\node[vertex] (\v) at (\x,\y) {$\v$};
+
+\foreach \a/\b in {
+m/q,m/r,m/x,
+n/o,n/q,n/u,
+o/r,o/s,o/v,
+p/o,p/s,p/z,
+q/t,r/u,r/y,
+s/r,u/t,
+v/w,v/x,
+w/z,y/v
+}
+\draw[->,thick] (\a)--(\b);
+
+\end{tikzpicture}
+
+\end{document}
